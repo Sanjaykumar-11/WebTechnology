@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <h1 style="color:brown; font-size:40px; text-align: center;">TCE FOOD COURT</h1> 
+    <div class="btn-group">
+        <button class="button">Home</button>
+        <button class="button">Order Now</button>
+        <button class="button" onclick="myFunction()">View balance</button>
+        <button class="button">Logout</button>
+    </div>
+
+</head>
+<style>
+    body 
+    {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: lemonchiffon;
+    }
+
+    .btn-group .button 
+    {
+        background-color: brown;
+        border: 1px solid brown;
+        color: white;
+        padding: 20px 130px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        float: left;
+    }
+
+    .btn-group .button:not(:last-child) 
+    {
+        border-right: none; 
+    }
+
+    .btn-group .button:hover 
+    {
+        background-color: red;
+    }
+
+    #menu 
+    {
+        border-collapse: collapse;
+        width: 65%;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    #menu td, #menu th 
+    {
+        background-color: lemonchiffon;
+        border: 1px solid brown;
+        padding: 8px;
+        font-size: 20px;
+    }
+
+    #menu th 
+    {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: brown;
+        color: white;
+        font-size: 20px;
+    }
+</style>
+<script>
+    function myFunction() 
+    {
+      alert("Your balance: "+"xxx");
+    }
+</script>
+<body>
+    <center><br><br><br><br><h2 style="color:brown;"> My Orders</h2><br></center>
+    <table id="menu" align="center">
+        <tr>
+          <th>Date</th>
+          <th>Item name</th>
+          <th>Quantity</th>
+        </tr>
+        <tr>
+          <td>12/08/2021</td>
+          <td>Dosa</td>
+          <td>2</td>
+        </tr>
+        <tr>
+            <td>10/08/2021</td>
+            <td>Puri</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>15/08/2021</td>
+            <td>Dosa<br>Puri</td>
+            <td>1<br>2</td>
+        </tr>
+      </table>
+      
+</body>
+</html>

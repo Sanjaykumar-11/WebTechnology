@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <h1 style="color:brown; font-size:40px; text-align: center;">TCE FOOD COURT</h1> 
+    <div class="btn-group">
+        <button class="button">Home</button>
+        <button class="button" onclick="myFunction()">View balance</button>
+        <button class="button">My Orders</button>
+        <button class="button">Logout</button>
+    </div>
+
+</head>
+<style>
+    body 
+    {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: lemonchiffon;
+    }
+
+    .btn-group .button 
+    {
+        background-color: brown;
+        border: 1px solid brown;
+        color: white;
+        padding: 20px 130px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        float: left;
+    }
+
+    .btn-group .button:not(:last-child) 
+    {
+        border-right: none; 
+    }
+
+    .btn-group .button:hover 
+    {
+        background-color: red;
+    }
+input[type=number], select {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 10%;
+  background-color: brown;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: red;
+}
+
+
+</style>
+
+<script>
+    function myFunction() 
+    {
+      alert("Your balance: "+"xxx");
+    }
+</script>
+
+<body>
+    <center><br><br><br><br><h2 style="color:brown;"> PLACE ORDER </h2><br></center>
+
+    <center>
+        <form action="">
+          <label for="dosa">Dosa &ensp;&ensp;</label>
+          <input type="number" placeholder="Quantity">
+        <br>
+          <label for="Parota">Parota &ensp;</label>
+          <input type="number" placeholder="Quantity">
+      <br>
+      <label for="puri">Puri  &ensp;&ensp;&ensp;</label>
+      <input type="number" placeholder="Quantity">
+      <br>
+        
+          <input type="submit" value="Submit">
+        </form>
+    </center>
+
+    
+</body>
+</html>
