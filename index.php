@@ -1,9 +1,16 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html>
+
 <title>Login</title>
+
 <head>
     <h1 style="color:brown; font-size:42px; text-align: center;">TCE FOOD COURT</h1> 
 </head>     
+
 <style>
     body 
     {
@@ -79,10 +86,11 @@
         left: calc(50% - 50px);
     }
 </style>
+
 <body>
     <img src="icon.jpeg" class="logo">
     <div class="main">
-        <form>
+        <form method="post">
             <h1 style="color:brown;" > LOGIN </h1><br>
 
             <label for="username">Username </label><br><br>
@@ -97,4 +105,38 @@
         </form>
     </div>
 </body>
+
+
+<?php
+  $message="";
+  if(count($_POST)>0) 
+  {
+    $conn = mysqli_connect("localhost","root","","canteen");
+    if (mysqli_connect_errno())
+    {
+      echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    }
+    $result = mysqli_query($conn,"SELECT * FROM user WHERE username='" . $_POST["userName"] . "' and password = '". $_POST["password"]."'");
+    $result1=mysqli_query($conn,"SELECT * FROM user WHERE username='" . $_POST["userName"] . "' and password = '". $_POST["password"]."' and type = '1' ");
+    $count  = mysqli_num_rows($result);
+    $count1  = mysqli_num_rows($result1);
+    if($count==0) 
+    {
+      $message = "Invalid Username or Password!";
+    } 
+    else 
+    {
+      $message = "You are successfully authenticated!";
+      $_SESSION["userid"] = $_POST["userName"];
+
+      if($count1==0)
+        header("Location: user.php");
+      else 
+      {
+        header("Location: admin.php");
+      }
+      exit;
+    }
+  }
+?>
 </html>
