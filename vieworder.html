@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <title>Admin</title>
+<link rel="stylesheet" href="admincss.css"> 
+<style>
+    #menu 
+    {
+        border-collapse: collapse;
+        width: 65%;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    #menu td, #menu th 
+    {
+        background-color: lemonchiffon;
+        border: 1px solid brown;
+        padding: 8px;
+        font-size: 20px;
+    }
+
+    #menu th 
+    {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: brown;
+        color: white;
+        font-size: 20px;
+    }
+</style>
+
+
+<head>
+    <h1 style="color:brown; font-size:40px; text-align: center;">TCE FOOD COURT</h1> 
+    <br><br>
+    <div class="navbar">
+        <a href="">Home</a>
+        <a href="">Update Availablity</a>
+        <a href="addcredit.html">Add Credits</a>
+        <div class="dropdown">
+          <button class="dropbtn">Users
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="adduser.html">Add user</a>
+            <a href="removeuser.html">Remove user</a>
+          </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Items
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="additem.html">Add Items</a>
+                <a href="removeitem.html">Remove Items</a>
+            </div>
+        </div>
+        <a href="index.html">Logout</a>
+    </div>
+</head>
+
+<script>
+    function myFunction() 
+    {
+      alert("Your balance: "+"xxx");
+    }
+</script>
+<script src="script.js" async defer></script>
+<body>
+    <center><br><br><br><br><h2 style="color:brown;"> Orders </h2><br></center>
+    <table id="menu" align="center">
+        <tr>
+          <th>Item name</th>
+          <th>Quantity</th>
+        </tr>
+        <tr>
+          <td>Dosa</td>
+          <td>20</td>
+        </tr>
+        <tr>
+          <td>Parota</td>
+          <td>50</td>
+        </tr>
+        <tr>
+          <td>Puri</td>
+          <td>50</td>
+        </tr>
+      </table>
+      <br> 
+      <table id="menu" align="center">
+        <tr>
+          <th>User name</th>
+          <th>Item</th>
+          <th>Quantity</th>
+        </tr>
+        <tr>
+          <td>sanjay</td>
+          <td>Dosa</td>
+          <td>2</td>
+        </tr>
+      </table>
+
+</body>
+</html>

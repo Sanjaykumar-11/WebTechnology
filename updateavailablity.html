@@ -2,13 +2,42 @@
 <html>
   <title>Admin</title>
 <link rel="stylesheet" href="admincss.css"> 
+<style>
+    #menu 
+    {
+        border-collapse: collapse;
+        width: 65%;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    #menu td, #menu th 
+    {
+        background-color: lemonchiffon;
+        border: 1px solid brown;
+        padding: 8px;
+        font-size: 20px;
+    }
+
+    #menu th 
+    {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: brown;
+        color: white;
+        font-size: 20px;
+    }
+</style>
+
+
 <head>
     <h1 style="color:brown; font-size:40px; text-align: center;">TCE FOOD COURT</h1> 
     <br><br>
     <div class="navbar">
+        <a href="index.html">Home</a>
         <a href="">Update Availablity</a>
         <a href="addcredit.html">Add Credits</a>
-        <a href="vieworder.html">View Orders</a>
         <div class="dropdown">
           <button class="dropbtn">Users
             <i class="fa fa-caret-down"></i>
@@ -39,34 +68,6 @@
 </script>
 <script src="script.js" async defer></script>
 <body>
-    <br><br><br><br>
-    <div class="container">
-        <h4 style="color: black;">Your balance</h4>
-        <h1 id="balance">0.0 INR</h1>
-        <div class="inc-exp-container">
-          <div>
-            <h4>Income</h4>
-            <p id="money-plus" class="money plus">0.00 INR</p>
-          </div>
-          <div>
-            <h4>Expense</h4>
-            <p id="money-minus" class="money minus">-0.00 INR</p>
-          </div>
-        </div>
-        <h3>History</h3>
-        <ul id="list" class="list">
-        </ul>
-        <h3>Add New Transation</h3>
-        <form action="" id="form">
-          <div class="form-control">
-            <input type="text" id="text" placeholder="Please enter the name of your expenses..." />
-          </div>
-          <div class="form-control">
-            <label for="amount"></label>
-            <input type="number" id="amount" placeholder="Amount"/>
-          </div>
-          <button class="btn">Add transaction</button>
-        </form>
-      </div>  
+    
 </body>
 </html>
