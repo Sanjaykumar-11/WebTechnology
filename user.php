@@ -1,5 +1,5 @@
 <?php
-session_start();
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -10,9 +10,9 @@ session_start();
 
     <div class="btn-group" center>
 
-        <a button class="button" href="order.html">Order Now</button></a>
-        <a button class="button" href="myorder.html">My Orders</button></a>
-        <a button class="button" href="index.html">Logout</button></a>
+        <a button class="button" href="order.php">Order Now</button></a>
+        <a button class="button" href="myorder.php">My Orders</button></a>
+        <a button class="button" href="index.php">Logout</button></a>
 
         <?php
             $conn = mysqli_connect("localhost","root","","canteen");
@@ -93,7 +93,9 @@ session_start();
         color: white;
         font-size: 20px;
     }
-    h2{
+    
+    h2
+    {
         color: #333;
         font-size: 25px;
     }

@@ -1,14 +1,16 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
     <h1 style="color:brown; font-size:40px; text-align: center;">TCE FOOD COURT</h1> 
     <div class="btn-group">
-        <a button class="button" href="index.html">Home</button></a>
-        <a button class="button" href="order.html">Order Now</button></a>
-        <a button class="button" onclick="myFunction()">View balance</button></a>
-        <a button class="button" href="index.html">Logout</button></a>
+        <a button class="button" href="user.php">Home</button></a>
+        <a button class="button" href="order.php">Order Now</button></a>
+        <a button class="button" href="index.php">Logout</button></a>
     </div>
-
 </head>
 <style>
     body 
@@ -22,7 +24,7 @@
         background-color: brown;
         border: 1px solid brown;
         color: white;
-        padding: 20px 130px;
+        padding: 20px 193px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
@@ -67,36 +69,29 @@
         font-size: 20px;
     }
 </style>
-<script>
-    function myFunction() 
-    {
-      alert("Your balance: "+"xxx");
-    }
-</script>
+
 <body>
     <center><br><br><br><br><h2 style="color:brown;"> My Orders</h2><br></center>
-    <table id="menu" align="center">
-        <tr>
-          <th>Date</th>
-          <th>Item name</th>
-          <th>Quantity</th>
-        </tr>
-        <tr>
-          <td>12/08/2021</td>
-          <td>Dosa</td>
-          <td>2</td>
-        </tr>
-        <tr>
-            <td>10/08/2021</td>
-            <td>Puri</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>15/08/2021</td>
-            <td>Dosa<br>Puri</td>
-            <td>1<br>2</td>
-        </tr>
-      </table>
+    <center>
+    <table id="menu">
+    <tr>
+    <th>Item_name</th>
+    <th>QTY</th>
+    <th>Time</th>
+    <th>Date </th>
+    <tr>
+    <?php
+    $conn = mysqli_connect("localhost", "root", "", "canteen");
+    $sql = "SELECT * FROM order_details WHERE username= '" . $_SESSION["userid"] . "';";
+    $result = $conn->query($sql);
+    while($row = $result->fetch_assoc()) 
+    {
+        $temp1 = substr($row["timestamp"],11,9);
+        $temp2= substr($row["timestamp"],0,10);
+        echo "<tr><td>" . $row["item_name"]. "</td><td>".$row["item_qty"]."</td><td>".$temp1."</td><td>".$temp2."</td><tr>";
+    }
+    echo "</table></center>"
+    ?>
       
 </body>
 </html>
