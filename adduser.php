@@ -1,3 +1,18 @@
+<?php
+$message="";
+if(count($_POST)>0) {
+	$conn = mysqli_connect("localhost","root","","canteen");
+		if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+		$result = mysqli_query($conn," insert into user values ('" . $_POST["userName"] . "','" . $_POST["password"] . "','" . $_POST["privilage"] . "','" . $_POST["credit"] . "')");
+
+	}
+    $message = "User added successfully!";
+    echo "<script type='text/javascript'>alert('$message');</script>";
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -6,15 +21,14 @@
     <br><br>
     <div class="navbar">
         <a href="admin.html">Home</a>
-        <a href="addcredit.html">Add credits</a>
-        <a href="">Update Availablity</a>
-        <a href="">View Orders</a>
+        <a href="updateavailablity.html">Update Availablity</a>
+        <a href="vieworder.html">View Orders</a>
         <div class="dropdown">
           <button class="dropbtn">Users
             <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content">
-            <a href="adduser.html">Add user</a>
+            <a href="removeuser.html">Remove user</a>
           </div>
         </div>
         <div class="dropdown">
@@ -23,6 +37,7 @@
             </button>
             <div class="dropdown-content">
                 <a href="additem.html">Add Items</a>
+                <a href="removeitem.html">Remove Items</a>
             </div>
         </div>
         <a href="index.html">Logout</a>
@@ -47,7 +62,7 @@
         font-size: 16px;
         color: white;
         text-align: center;
-        padding: 16px 58px;
+        padding: 16px 75px;
         text-decoration: none;
     }
 
@@ -152,22 +167,23 @@
     }
 </style>
 
-<script>
-    function myFunction() 
-    {
-      alert("Your balance: "+"xxx");
-    }
-</script>
 
 <body>
-    <center><br><br><br><br><h2 style="color:brown;">Remove User</h2><br></center>
+    <center><br><br><h2 style="color:brown;">Add User</h2><br></center>
 
     <center>
-        <form action="">
-          <label for="username">Username&ensp;</label>
-          <input type="text" placeholder="username"><br>
-
-          <input type="submit" value="REMOVE">
+        <form action="" method="post">
+          <label for="username">Username &ensp;&ensp;</label>
+          <input type="text" name="userName">
+        <br>
+      <label for="pass">Password  &ensp;&ensp;&ensp;</label>
+      <input type="password" name="password">
+      <br>
+      <label for="usertype">User Type&ensp;&ensp;&ensp;</label>
+      <input type="number" name="privilage" placeholder="1 for admin 0 for normal" required pattern="[0 | 1]{1}"><br>
+      <label for="usertype">Credit amount&ensp;</label>
+      <input type="number" name="credit"><br><br>
+          <input type="submit" value="ADD">
         </form>
     </center>
 </body>

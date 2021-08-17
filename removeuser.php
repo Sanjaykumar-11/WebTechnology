@@ -1,3 +1,37 @@
+<?php
+
+
+$message="";
+if(count($_POST)>0) {
+	$conn = mysqli_connect("localhost","root","","canteen");
+		if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+	$a=$_POST['user_name'];
+	$sql="select * from user   where username='$a' ";
+	$result = mysqli_query($conn,$sql);
+	$row=mysqli_num_rows($result);
+
+	if ($row ==0)
+    {
+		$message = "invalid item name\\nTry again.";
+		echo "<script type='text/javascript'>alert('$message');</script>";
+
+	}
+
+	$sql=" delete  from user  where  username='" . $_POST["user_name"] . "' ";
+	$result = mysqli_query($conn,$sql);
+    $message = "User Removed!";
+    echo "<script type='text/javascript'>alert('$message');</script>";
+}
+
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 
@@ -6,15 +40,15 @@
     <br><br>
     <div class="navbar">
         <a href="admin.html">Home</a>
-        <a href="updateavailablity.html">Update Availablity</a>
-        <a href="vieworder.html">View Orders</a>
+        <a href="addcredit.html">Add credits</a>
+        <a href="">Update Availablity</a>
+        <a href="">View Orders</a>
         <div class="dropdown">
           <button class="dropbtn">Users
             <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content">
             <a href="adduser.html">Add user</a>
-            <a href="removeuser.html">Remove user</a>
           </div>
         </div>
         <div class="dropdown">
@@ -23,7 +57,6 @@
             </button>
             <div class="dropdown-content">
                 <a href="additem.html">Add Items</a>
-                <a href="removeitem.html">Remove Items</a>
             </div>
         </div>
         <a href="index.html">Logout</a>
@@ -48,7 +81,7 @@
         font-size: 16px;
         color: white;
         text-align: center;
-        padding: 16px 75px;
+        padding: 16px 58px;
         text-decoration: none;
     }
 
@@ -161,20 +194,14 @@
 </script>
 
 <body>
-    <center><br><br><br><br><h2 style="color:brown;">Add credits</h2><br></center>
+    <center><br><br><br><br><h2 style="color:brown;">Remove User</h2><br></center>
 
     <center>
-        <form action="">
-          <label for="username">Username &ensp;&ensp;</label>
-          <input type="text" placeholder="username">
-        <br>
-          <label for="credit">credit &nbsp;&ensp; &nbsp;&ensp;</label>
-          <input type="number" placeholder="credit amount">
-      <br>
-      <label for="pass">Password  &ensp;&ensp;&ensp;</label>
-      <input type="password" placeholder="pass">
-      <br>
-          <input type="submit" value="Submit">
+        <form method="post" action="" >
+          <label for="username">Username&ensp;</label>
+          <input type="text" name="user_name" placeholder="username"><br>
+
+          <input type="submit" value="REMOVE">
         </form>
     </center>
 </body>

@@ -6,16 +6,16 @@
     <h1 style="color:brown; font-size:40px; text-align: center;">TCE FOOD COURT</h1> 
     <br><br>
     <div class="navbar">
-        <a href="">Update Availablity</a>
-        <a href="addcredit.html">Add Credits</a>
+        <a href="updateavailablity.php">Update Availablity</a>
+        <a href="addcredit.php">Add Credits</a>
         <a href="vieworder.html">View Orders</a>
         <div class="dropdown">
           <button class="dropbtn">Users
             <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content">
-            <a href="adduser.html">Add user</a>
-            <a href="removeuser.html">Remove user</a>
+            <a href="adduser.php">Add user</a>
+            <a href="removeuser.php">Remove user</a>
           </div>
         </div>
         <div class="dropdown">
@@ -31,12 +31,6 @@
     </div>
 </head>
 
-<script>
-    function myFunction() 
-    {
-      alert("Your balance: "+"xxx");
-    }
-</script>
 <script src="script.js" async defer></script>
 <body>
     <br><br><br><br>

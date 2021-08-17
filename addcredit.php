@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html>
+<?php
+$message="";
+if(count($_POST)>0) {
+	$conn = mysqli_connect("localhost","root","","canteen");
+		if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+	$a=$_POST['user_name'];
+	$sql="select * from user where username='$a' ";
+	$result = mysqli_query($conn,$sql);
+	$row=mysqli_num_rows($result);
 
+	if ($row ==0)
+    {
+		$message = "invalid user name\\nTry again.";
+		echo "<script type='text/javascript'>alert('$message');</script>";
+
+	}
+
+
+
+	$current = mysqli_query($conn," select credit_amount from user where username='" . $_POST["user_name"] . "'  ");
+	$temp = $_POST['credit_amount'];
+	$row = mysqli_fetch_row($current);
+	$base_pay = $row[0];
+	$base_pay = $base_pay + $temp;
+	$result = mysqli_query($conn," update user set credit_amount = $base_pay where username='" . $_POST["user_name"] . "' ");
+    $message = "Amount succesfully credited!";
+    echo "<script type='text/javascript'>alert('$message');</script>";
+}
+?>
 <head>
     <h1 style="color:brown; font-size:40px; text-align: center;">TCE FOOD COURT</h1> 
     <br><br>
     <div class="navbar">
-        <a href="admin.html">Home</a>
+        <a href="admin.php">Home</a>
         <a href="updateavailablity.html">Update Availablity</a>
         <a href="vieworder.html">View Orders</a>
         <div class="dropdown">
@@ -13,6 +44,7 @@
             <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content">
+            <a href="adduser.html">Add user</a>
             <a href="removeuser.html">Remove user</a>
           </div>
         </div>
@@ -152,29 +184,24 @@
     }
 </style>
 
-<script>
-    function myFunction() 
-    {
-      alert("Your balance: "+"xxx");
-    }
-</script>
 
 <body>
-    <center><br><br><br><br><h2 style="color:brown;">Add User</h2><br></center>
+    <center><br><br><br><br><h2 style="color:brown;">Add credits</h2><br></center>
 
     <center>
-        <form action="">
+        <form action="" method="post">
+
           <label for="username">Username &ensp;&ensp;</label>
-          <input type="text" placeholder="username">
+          <input type="text" name="user_name" placeholder="username">
         <br>
-          <label for="credit">credit &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-          <input type="number" placeholder="credit amount">
+          <label for="credit">credit &nbsp;&ensp; &nbsp;&ensp;</label>
+          <input type="number" name="credit_amount" placeholder="credit amount">
       <br>
-      <label for="pass">Password  &ensp;&ensp;&ensp;</label>
-      <input type="password" placeholder="password">
-      <br>
-          <input type="submit" value="ADD">
+
+          <input type="submit" value="Submit">
         </form>
     </center>
 </body>
+
+
 </html>
