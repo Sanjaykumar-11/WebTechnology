@@ -8,7 +8,7 @@
     <div class="navbar">
         <a href="updateavailablity.php">Update Availablity</a>
         <a href="addcredit.php">Add Credits</a>
-        <a href="vieworder.html">View Orders</a>
+        <a href="vieworder.php">View Orders</a>
         <div class="dropdown">
           <button class="dropbtn">Users
             <i class="fa fa-caret-down"></i>
@@ -23,11 +23,11 @@
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="additem.html">Add Items</a>
-                <a href="removeitem.html">Remove Items</a>
+                <a href="additem.php">Add Items</a>
+                <a href="removeitem.php">Remove Items</a>
             </div>
         </div>
-        <a href="index.html">Logout</a>
+        <a href="index.php">Logout</a>
     </div>
 </head>
 
