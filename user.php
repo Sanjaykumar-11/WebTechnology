@@ -25,7 +25,7 @@
             {
                 while($row = mysqli_fetch_assoc($result)) 
                 {
-                    echo "<br><br><br><br><center><h2>Your Balance: " . $row["credit_amount"]. " INR</h2><center>";
+                    echo "<br><br><br><br><br><br><br><br><br><center><h2>Your Balance: " . $row["credit_amount"]. " INR</h2><center>";
                 }
             } 
             else 
@@ -49,7 +49,7 @@
         background-color: brown;
         border: 1px solid brown;
         color: white;
-        padding: 20px 191px;
+        padding: 20px 188px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
@@ -103,24 +103,25 @@
 
 <body>
     <center><br><br><br><br><h2 style="color:brown;"> Menu </h2><br></center>
-    <table id="menu" align="center">
-        <tr>
-          <th>Item name</th>
-          <th>Cost</th>
-        </tr>
-        <tr>
-          <td>Dosa</td>
-          <td>15</td>
-        </tr>
-        <tr>
-          <td>Parota</td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <td>Puri</td>
-          <td>30</td>
-        </tr>
-      </table>
+    
+      <table id="menu" align="center">
+<tr>
+<th>Item</th>
+<th>Cost</th>
+</tr>
+<?php
+
+$sql = "SELECT * FROM food_items where include=1";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+while($row = $result->fetch_assoc()) {
+echo "<tr><td>" . $row["item_name"]. "</td><td>" . $row["price"] . "</td>";
+}
+echo "</table>";
+}
+$conn->close();
+?>
+</table>
       
 </body>
 

@@ -84,7 +84,7 @@
     while($row = mysqli_fetch_array($result)) 
     {
     ?>
-    <center> &emsp; <input type="number" name="<?=$row["item_name"];?>" value="0" min="0" >&ensp;&ensp;<?=$row["item_name"];?></center>
+    <center><input type="number" name="<?=$row["item_name"];?>" value="0" min="0" >&ensp;&ensp;<?=$row["item_name"];?></center>
     <?php
     $i++;
     }

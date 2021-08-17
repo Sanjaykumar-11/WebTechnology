@@ -1,3 +1,32 @@
+<?php
+$message="";
+if(count($_POST)>0) {
+	$conn = mysqli_connect("localhost","root","","canteen");
+		if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+	$a=$_POST['Item_Id'];
+	$sql="select * from food_items  where item_name='$a' ";
+	$result = mysqli_query($conn,$sql);
+	$row=mysqli_num_rows($result);
+
+	if ($row ==0)
+ {
+		$message = "invalid item name\\nTry again.";
+		echo "<script type='text/javascript'>alert('$message');</script>";
+
+	}
+
+	$sql="delete from food_items  where item_name='$a' ";
+	$result = mysqli_query($conn,$sql);
+    $message = "Item removed";
+	echo "<script type='text/javascript'>alert('$message');</script>";
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 
@@ -7,7 +36,7 @@
     <div class="navbar">
         <a href="admin.html">Home</a>
         <a href="addcredit.html">Add credits</a>
-        <a href="updateavailablity.html">Update Availablity</a>
+        <a href="">Update Availablity</a>
         <a href="">View Orders</a>
         <div class="dropdown">
           <button class="dropbtn">Users
@@ -23,7 +52,7 @@
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="removeitem.html">Remove Items</a>
+                <a href="additem.html">Add Items</a>
             </div>
         </div>
         <a href="index.html">Logout</a>
@@ -164,13 +193,11 @@
     <center><br><br><br><br><h2 style="color:brown;">Add Items</h2><br></center>
 
     <center>
-        <form action="">
+        <form action="" method="post">
           <label for="username">Item name&ensp;</label>
-          <input type="text" placeholder="username"><br>
-      <label for="pass">Price  &ensp;&ensp;&ensp;&ensp;&ensp;</label>
-      <input type="number" placeholder="pass">
-      <br>
-          <input type="submit" value="ADD">
+          <input type="text" name="Item_Id" placeholder="Item name"><br>
+
+          <input type="submit" value="REMOVE">
         </form>
     </center>
 </body>

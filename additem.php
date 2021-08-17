@@ -1,3 +1,20 @@
+<?php
+$message="";
+if(count($_POST)>0) 
+{
+	$conn = mysqli_connect("localhost","root","","canteen");
+		if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+	$result = mysqli_query($conn," insert into food_items values ('"  . $_POST["Item_name"] . "','" . $_POST["Item_cost"] . "','1')");
+
+    $message = "Item is added successfully";
+	echo "<script type='text/javascript'>alert('$message');</script>";
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -7,7 +24,7 @@
     <div class="navbar">
         <a href="admin.html">Home</a>
         <a href="addcredit.html">Add credits</a>
-        <a href="">Update Availablity</a>
+        <a href="updateavailablity.html">Update Availablity</a>
         <a href="">View Orders</a>
         <div class="dropdown">
           <button class="dropbtn">Users
@@ -23,7 +40,7 @@
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="additem.html">Add Items</a>
+                <a href="removeitem.html">Remove Items</a>
             </div>
         </div>
         <a href="index.html">Logout</a>
@@ -153,22 +170,18 @@
     }
 </style>
 
-<script>
-    function myFunction() 
-    {
-      alert("Your balance: "+"xxx");
-    }
-</script>
 
 <body>
     <center><br><br><br><br><h2 style="color:brown;">Add Items</h2><br></center>
 
     <center>
-        <form action="">
-          <label for="username">Item name&ensp;</label>
-          <input type="text" placeholder="Item name"><br>
-
-          <input type="submit" value="REMOVE">
+        <form action="" method="post">
+          <label for="Item name">Item name&ensp;</label>
+          <input type="text" name="Item_name" placeholder="Item name"><br>
+      <label for="price">Price  &ensp;&ensp;&ensp;&ensp;&ensp;</label>
+      <input type="number" name="Item_cost" placeholder="cost">
+      <br>
+          <input type="submit" value="ADD">
         </form>
     </center>
 </body>
