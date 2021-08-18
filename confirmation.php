@@ -106,6 +106,7 @@
     }
     foreach($age as $x => $x_value) 
     {
+        echo "Key=" . $x . ", Value=" . $x_value;
         $result = mysqli_query($conn," select price from food_items  where item_name='" . $x . "'");
         echo "<center>";
         while($row = mysqli_fetch_assoc($result))
@@ -113,6 +114,7 @@
             $cost=$row["price"];
             $total  = $total + ( intval($cost) * intval($x_value));
         }
+
     }
     $_SESSION["order_details"] = $age;
     $_SESSION["total_bill"] = $total;

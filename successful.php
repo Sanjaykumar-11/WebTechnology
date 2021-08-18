@@ -97,10 +97,7 @@
         echo "<center>";
         foreach($_SESSION["order_details"] as $key=>$val) 
         {
-            if($val>0)
-            {
-                $result= mysqli_query($conn," insert into order_details(username,item_name,item_qty) values('".$_SESSION["userid"]."','$key','$val')");
-            }
+            $result= mysqli_query($conn," insert into order_details(username,item_name,item_qty) values('".$_SESSION["userid"]."','$key','$val')");
         }
 
         $result = mysqli_query($conn," select credit_amount from user where username= '" . $_SESSION["userid"] . "' ");

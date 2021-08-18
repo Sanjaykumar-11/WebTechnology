@@ -1,6 +1,6 @@
 <?php
   $conn = mysqli_connect("localhost", "root", "", "canteen") or die("Connection Error: " . mysqli_error($conn));
-  $result = mysqli_query($conn, "SELECT * FROM food_items where include='1'");
+  $result = mysqli_query($conn, "SELECT * FROM food_items where include=1");
 ?>
 
 <!DOCTYPE html>
@@ -84,7 +84,7 @@
     while($row = mysqli_fetch_array($result)) 
     {
     ?>
-    <center><input type="number" name="<?=$row["item_name"];?>" value="0" min="0" >&ensp;&ensp;<?=$row["item_name"];?></center>
+    <center><input type="number" name="<?=$row["item_name"];?>" min="0" >&ensp;&ensp;<?=$row["item_name"];?></center>
     <?php
     $i++;
     }
