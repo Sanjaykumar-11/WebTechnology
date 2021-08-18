@@ -59,7 +59,7 @@ $result = mysqli_query($conn, "SELECT * FROM food_items ");
 <form action="" method='post'>
 <fieldset style="border:solid 5px ; ">
 
-  <legend style="align:center">ITEMS AVAILABLE</legend>
+  <legend>ITEMS AVAILABLE</legend>
 <?php
 $i=0;
 while($row = mysqli_fetch_array($result)) {
