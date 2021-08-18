@@ -9,7 +9,7 @@ session_start();
     <div class="btn-group">
         <a button class="button" href="user.php">Home</button></a>
         <a button class="button" href="order.php">Order Now</button></a>
-        <a button class="button" href="index.php">Logout</button></a>
+        <a button class="button" href="../index.php">Logout</button></a>
     </div>
 </head>
 <style>

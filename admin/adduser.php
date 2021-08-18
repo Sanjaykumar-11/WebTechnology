@@ -8,14 +8,15 @@ if(count($_POST)>0) {
   }
 		$result = mysqli_query($conn," insert into user values ('" . $_POST["userName"] . "','" . $_POST["password"] . "','" . $_POST["privilage"] . "','" . $_POST["credit"] . "')");
 
+        $message = "User added successfully!";
+        echo "<script type='text/javascript'>alert('$message');</script>";
 	}
-    $message = "User added successfully!";
-    echo "<script type='text/javascript'>alert('$message');</script>";
+   
 
 ?>
 <!DOCTYPE html>
 <html>
-
+<title>Add user</title>
 <head>
     <h1 style="color:brown; font-size:40px; text-align: center;">TCE FOOD COURT</h1> 
     <br><br>
@@ -62,7 +63,7 @@ if(count($_POST)>0) {
         font-size: 16px;
         color: white;
         text-align: center;
-        padding: 16px 75px;
+        padding: 16px 80px;
         text-decoration: none;
     }
 

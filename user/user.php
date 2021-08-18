@@ -49,7 +49,7 @@
         background-color: brown;
         border: 1px solid brown;
         color: white;
-        padding: 20px 186px;
+        padding: 20px 184px;
         text-align: center;
         text-decoration: none;
         display: inline-block;

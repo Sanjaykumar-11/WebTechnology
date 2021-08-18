@@ -17,7 +17,7 @@ if(count($_POST)>0)
 
 <!DOCTYPE html>
 <html>
-
+<title>Add Item</title>
 <head>
     <h1 style="color:brown; font-size:40px; text-align: center;">TCE FOOD COURT</h1> 
     <br><br>

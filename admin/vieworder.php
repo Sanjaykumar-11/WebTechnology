@@ -19,7 +19,8 @@ if(count($_POST)>0)
 
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="../admincss.css"> 
+<title>View order</title>
+
 <style>
     body
     {

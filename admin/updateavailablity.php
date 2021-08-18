@@ -5,7 +5,7 @@ $result = mysqli_query($conn, "SELECT * FROM food_items ");
 
 <!DOCTYPE html>
 <html>
-  <title>Update</title>
+  <title>Update Availablity</title>
 <link rel="stylesheet" href="../admincss.css"> 
 <style>
     body
@@ -24,7 +24,7 @@ $result = mysqli_query($conn, "SELECT * FROM food_items ");
         font-size: 16px;
         color: white;
         text-align: center;
-        padding: 16px 132px;
+        padding: 18px 129.5px;
         text-decoration: none;
     }
 
@@ -183,10 +183,10 @@ $temp = str_replace("_"," ","$x");
 $age[$temp] = $x_value;
 if($x_value=="on"){
 $result = mysqli_query($conn," update food_items set include=1 where item_name='" . $temp . "'");
+}
+}
 $message = "Availablity updated!";
 echo "<script type='text/javascript'>alert('$message');</script>";
-}
-}
 }
 ?>
 </body>
