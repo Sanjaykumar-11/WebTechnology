@@ -12,7 +12,7 @@
 
         <a button class="button" href="order.php">Order Now</button></a>
         <a button class="button" href="myorder.php">My Orders</button></a>
-        <a button class="button" href="index.php">Logout</button></a>
+        <a button class="button" href="../index.php">Logout</button></a>
 
         <?php
             $conn = mysqli_connect("localhost","root","","canteen");
@@ -40,7 +40,7 @@
 <style>
     body 
     {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: sans-serif;
         background-color: lemonchiffon;
     }
 
@@ -49,11 +49,11 @@
         background-color: brown;
         border: 1px solid brown;
         color: white;
-        padding: 20px 188px;
+        padding: 20px 186px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: 16px;
+        font-size: 18px;
         cursor: pointer;
         float: left;
     }
@@ -70,6 +70,7 @@
 
     #menu 
     {
+
         border-collapse: collapse;
         width: 65%;
         text-align: center;

@@ -15,7 +15,7 @@ session_start();
 <style>
     body 
     {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family:sans-serif;
         background-color: lemonchiffon;
     }
 

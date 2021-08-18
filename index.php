@@ -88,6 +88,7 @@
 </style>
 
 <body>
+  <br><br><br>
     <img src="icon.jpeg" class="logo">
     <div class="main">
         <form method="post">
@@ -130,10 +131,10 @@
       $_SESSION["userid"] = $_POST["userName"];
 
       if($count1==0)
-        header("Location: user.php");
+        header("Location: user/user.php");
       else 
       {
-        header("Location: admin.php");
+        header("Location: admin/admin.php");
       }
       exit;
     }

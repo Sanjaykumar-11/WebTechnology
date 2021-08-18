@@ -34,17 +34,17 @@ if(count($_POST)>0) {
     <h1 style="color:brown; font-size:40px; text-align: center;">TCE FOOD COURT</h1> 
     <br><br>
     <div class="navbar">
-        <a href="admin.html">Home</a>
-        <a href="addcredit.html">Add credits</a>
-        <a href="">Update Availablity</a>
-        <a href="">View Orders</a>
+        <a href="admin.php">Home</a>
+        <a href="addcredit.php">Add credits</a>
+        <a href="updateavailablity.php">Update Availablity</a>
+        <a href="vieworder.php">View Orders</a>
         <div class="dropdown">
           <button class="dropbtn">Users
             <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content">
-            <a href="adduser.html">Add user</a>
-            <a href="removeuser.html">Remove user</a>
+            <a href="adduser.php">Add user</a>
+            <a href="removeuser.php">Remove user</a>
           </div>
         </div>
         <div class="dropdown">
@@ -52,10 +52,10 @@ if(count($_POST)>0) {
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="additem.html">Add Items</a>
+                <a href="additem.php">Add Items</a>
             </div>
         </div>
-        <a href="index.html">Logout</a>
+        <a href="../index.php">Logout</a>
     </div>
 </head>
 

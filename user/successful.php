@@ -5,14 +5,14 @@
     <div class="btn-group">
         <a button class="button" href="user.php">Home</button></a>
         <a button class="button" href="myorder.php">My Orders</button></a>
-        <a button class="button" href="index.php">Logout</button></a>
+        <a button class="button" href="../index.php">Logout</button></a>
     </div>
 
 </head>
 <style>
     body 
     {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: sans-serif;
         background-color: lemonchiffon;
     }
 
@@ -53,6 +53,7 @@
 
     button
     {
+      font-size: 16px;
       width: 50%;
       background-color: brown;
       color: white;
@@ -121,7 +122,7 @@
         {
             while($row = mysqli_fetch_assoc($result)) 
             {
-                echo "<h1>The current balance is " . $row["credit_amount"]. "</h1>";
+                echo "<h1>Your balance: " . $row["credit_amount"]. "</h1>";
             }
         } 
         else 
@@ -132,9 +133,9 @@
     }
     ?>
 
-
+    <center>
     <a href= "order.php">  <button >Order Again</button></a> 
-    <a href= "user.php"><button >HomePage</button></a>
+    </center>
 </body>
 
 </html>

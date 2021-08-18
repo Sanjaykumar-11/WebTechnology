@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <title>Admin</title>
-<link rel="stylesheet" href="admincss.css"> 
+<link rel="stylesheet" href="../admincss.css"> 
 <head>
     <h1 style="color:brown; font-size:40px; text-align: center;">TCE FOOD COURT</h1> 
     <br><br>
@@ -31,7 +31,7 @@
     </div>
 </head>
 
-<script src="script.js" async defer></script>
+<script src="../script.js" async defer></script>
 <body>
     <br><br><br><br>
     <div class="container">

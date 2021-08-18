@@ -1,6 +1,6 @@
 body
     {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: sans-serif;
         background-color: lemonchiffon;
     }
     .navbar 
@@ -116,7 +116,7 @@ body
     }
     .inc-exp-container 
     {
-        background-color: #333;
+        background-color: #CC6600;
         padding: 20px;
         box-shadow: var(--box-shadow);
         display: flex;
@@ -168,7 +168,7 @@ body
 
     .btn {
     cursor: pointer;
-    background-color: #333;
+    background-color: #CC6600;
     box-shadow: var(--box-shadow);
     color: white;
     display: block;

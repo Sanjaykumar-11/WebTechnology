@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    <title>Add credit</title>
 <?php
 $message="";
 if(count($_POST)>0) {
@@ -37,15 +38,15 @@ if(count($_POST)>0) {
     <br><br>
     <div class="navbar">
         <a href="admin.php">Home</a>
-        <a href="updateavailablity.html">Update Availablity</a>
-        <a href="vieworder.html">View Orders</a>
+        <a href="updateavailablity.php">Update Availablity</a>
+        <a href="vieworder.php">View Orders</a>
         <div class="dropdown">
           <button class="dropbtn">Users
             <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content">
-            <a href="adduser.html">Add user</a>
-            <a href="removeuser.html">Remove user</a>
+            <a href="adduser.php">Add user</a>
+            <a href="removeuser.php">Remove user</a>
           </div>
         </div>
         <div class="dropdown">
@@ -53,18 +54,18 @@ if(count($_POST)>0) {
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="additem.html">Add Items</a>
-                <a href="removeitem.html">Remove Items</a>
+                <a href="additem.php">Add Items</a>
+                <a href="removeitem.php">Remove Items</a>
             </div>
         </div>
-        <a href="index.html">Logout</a>
+        <a href="../index.php">Logout</a>
     </div>
 </head>
 
 <style>
     body
     {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: Arial;
         background-color: lemonchiffon;
     }
     .navbar 
@@ -180,6 +181,7 @@ if(count($_POST)>0) {
 
     input[type=submit]:hover 
     {
+        font-size: 16px;
         background-color: red;
     }
 </style>
@@ -194,7 +196,7 @@ if(count($_POST)>0) {
           <label for="username">Username &ensp;&ensp;</label>
           <input type="text" name="user_name" placeholder="username">
         <br>
-          <label for="credit">credit &nbsp;&ensp; &nbsp;&ensp;</label>
+          <label for="credit">credit &nbsp;&ensp;&ensp;&nbsp;&ensp; &nbsp;&ensp;</label>
           <input type="number" name="credit_amount" placeholder="credit amount">
       <br>
 

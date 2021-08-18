@@ -17,7 +17,7 @@
 <style>
     body 
     {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: sans-serif;
         background-color: lemonchiffon;
     }
 
@@ -59,6 +59,7 @@
     input[type=submit] 
     {
       width: 10%;
+      font-size: 16px;
       background-color: brown;
       color: white;
       padding: 14px 20px;
@@ -84,7 +85,7 @@
     while($row = mysqli_fetch_array($result)) 
     {
     ?>
-    <center><input type="number" name="<?=$row["item_name"];?>" min="0" >&ensp;&ensp;<?=$row["item_name"];?></center>
+    <center><?=$row["item_name"];?>&ensp;&ensp;<input type="number" name="<?=$row["item_name"];?>" min="0" ></center>
     <?php
     $i++;
     }

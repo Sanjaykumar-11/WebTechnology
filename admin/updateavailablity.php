@@ -5,23 +5,110 @@ $result = mysqli_query($conn, "SELECT * FROM food_items ");
 
 <!DOCTYPE html>
 <html>
-  <title>Admin</title>
-<link rel="stylesheet" href="admincss.css"> 
+  <title>Update</title>
+<link rel="stylesheet" href="../admincss.css"> 
+<style>
+    body
+    {
+        font-family: sans-serif;
+        background-color: lemonchiffon;
+    }
+    .navbar 
+    {
+        overflow: hidden;
+        background-color: brown;
+    }
+    .navbar a 
+    {
+        float: left;
+        font-size: 16px;
+        color: white;
+        text-align: center;
+        padding: 16px 132px;
+        text-decoration: none;
+    }
 
+    .dropdown 
+    {
+        float: left;
+        overflow: hidden;
+    }
+
+    .dropdown .dropbtn 
+    {
+        font-size: 16px;  
+        border: none;
+        outline: none;
+        color: white;
+        padding: 16px 75px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+    }
+
+    .navbar a:hover, .dropdown:hover .dropbtn 
+    {
+        background-color: red;
+    }
+
+    .dropdown-content 
+    {
+        display: none;
+        position: absolute;
+        background-color: lemonchiffon;;
+        min-width: 160px;
+        box-shadow: 0px 8px 50px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a 
+    {
+        float: none;
+        color: black;
+        padding: 14px 50px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    .dropdown-content a:hover 
+    {
+        background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content 
+    {
+        display: block;
+    }
+
+    fieldset
+    {
+        max-width:500px;
+        padding:40px;	
+    }
+    legend
+    {
+        color: brown;
+        font-size: 20px;
+        border:2px brown;
+        border-radius:8px;
+        font-weight: bold;
+    }
+
+</style>
 <head>
     <h1 style="color:brown; font-size:40px; text-align: center;">TCE FOOD COURT</h1> 
     <br><br>
     <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="">Update Availablity</a>
-        <a href="addcredit.html">Add Credits</a>
+        <a href="admin.php">Home</a>
+        <a href="addcredit.php">Add Credits</a>
         <div class="dropdown">
           <button class="dropbtn">Users
             <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content">
-            <a href="adduser.html">Add user</a>
-            <a href="removeuser.html">Remove user</a>
+            <a href="adduser.php">Add user</a>
+            <a href="removeuser.php">Remove user</a>
           </div>
         </div>
         <div class="dropdown">
@@ -29,17 +116,17 @@ $result = mysqli_query($conn, "SELECT * FROM food_items ");
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="additem.html">Add Items</a>
-                <a href="removeitem.html">Remove Items</a>
+                <a href="additem.php">Add Items</a>
+                <a href="removeitem.php">Remove Items</a>
             </div>
         </div>
-        <a href="index.html">Logout</a>
+        <a href="../index.php">Logout</a>
     </div>
 </head>
 <style>
   input[type=submit] 
     {
-        width: 10%;
+        width: 60%;
         background-color: brown;
         color: white;
         padding: 14px 20px;
@@ -47,17 +134,22 @@ $result = mysqli_query($conn, "SELECT * FROM food_items ");
         border: none;
         border-radius: 4px;
         cursor: pointer;
+        font-size: 16px;
     }
 
     input[type=submit]:hover 
     {
         background-color: red;
     }
+    input[type=checkbox] {
+    zoom: 1.5;
+}
 </style>
 <body>
   <br><br><br><br>
 <form action="" method='post'>
-<fieldset style="border:solid 5px ; ">
+  <center>
+<fieldset style="border:solid 5px ; border-color:brown">
 
   <legend>ITEMS AVAILABLE</legend>
 <?php
@@ -65,7 +157,7 @@ $i=0;
 while($row = mysqli_fetch_array($result)) {
 ?>
 
-  <div style="float:bottom;  margin-top:50px; margin-left:50px"><input type="checkbox" name="<?=$row["item_name"];?>"  > <?=$row["item_name"];?> <br></div>
+<div style="margin-top:30px;"> <input type="checkbox" name="<?=$row["item_name"];?>"  >&emsp;&emsp; <?=$row["item_name"];?><br></div>
 <?php
 $i++;
 }
@@ -74,6 +166,7 @@ $i++;
 <br>
 <center><input type="submit" value="submit"></center>
 </fieldset>
+  </center>
 </div>
 </form>
 

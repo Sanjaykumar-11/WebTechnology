@@ -3,16 +3,16 @@
 <head>
     <h1 style="color:brown; font-size:40px; text-align: center;">TCE FOOD COURT</h1> 
     <div class="btn-group">
-        <a button class="button" href="user.html">Home</button></a>
-        <a button class="button" href="myorder.html">My Orders</button></a>
-        <a button class="button" href="index.html">Logout</button></a>
+        <a button class="button" href="user.php">Home</button></a>
+        <a button class="button" href="myorder.php">My Orders</button></a>
+        <a button class="button" href="../index.php">Logout</button></a>
     </div>
 
 </head>
 <style>
     body 
     {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: sans-serif;
         background-color: lemonchiffon;
     }
 
@@ -21,7 +21,7 @@
         background-color: brown;
         border: 1px solid brown;
         color: white;
-        padding: 20px 196.5px;
+        padding: 20px 194px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
@@ -53,6 +53,7 @@
 
     button
     {
+      font-size: 16px;
       width: 50%;
       background-color: brown;
       color: white;
@@ -70,7 +71,6 @@
 
     fieldset
     {
-        background-color:#ccc;
         max-width:500px;
         padding:40px;	
     }
@@ -81,6 +81,10 @@
         border:2px brown;
         border-radius:8px;
     }
+    h1
+    {
+        font-size: 20px;
+    }
 
 
 </style>
@@ -88,8 +92,8 @@
 <body>
     <br><br>    
     <br><br>    
-    <br><br>    
     <br><br>
+    <center>    
     <fieldset>
         <legend><b>&nbsp;&nbsp;CONFIRMATION&nbsp;&nbsp;</b></legend>
     <?php
@@ -106,7 +110,6 @@
     }
     foreach($age as $x => $x_value) 
     {
-        echo "Key=" . $x . ", Value=" . $x_value;
         $result = mysqli_query($conn," select price from food_items  where item_name='" . $x . "'");
         echo "<center>";
         while($row = mysqli_fetch_assoc($result))
@@ -118,8 +121,8 @@
     }
     $_SESSION["order_details"] = $age;
     $_SESSION["total_bill"] = $total;
-    echo "Total Amount:  $total ";
-    echo "<br>";
+    echo "<h1>Total Amount:  $total ";
+    echo "</h1><br>";
     $temp;
     $result = mysqli_query($conn," select credit_amount from user where username= '" . $_SESSION["userid"] . "' ");
     if (mysqli_num_rows($result) > 0) 
@@ -127,9 +130,8 @@
         while($row = mysqli_fetch_assoc($result)) 
         {
             echo "<br>";
-            echo "<br>";
-            echo " The current balance is " . $row["credit_amount"]. " ";
-            echo "<br>";
+            echo " <h1>Your balance: " . $row["credit_amount"]. " ";
+            echo "</h1><br>";
             echo "<br>";
 
             $temp = $row["credit_amount"];
@@ -147,6 +149,7 @@
     <a href='order.php'><button >Go Back</button></a>
 
     </fieldset>
+    </center>
 
 </body>
 
