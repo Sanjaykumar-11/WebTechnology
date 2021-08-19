@@ -27,7 +27,7 @@
                 <a href="removeitem.php">Remove Items</a>
             </div>
         </div>
-        <a href="index.php">Logout</a>
+        <a href="../index.php">Logout</a>
     </div>
 </head>
 

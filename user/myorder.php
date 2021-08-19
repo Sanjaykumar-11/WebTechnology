@@ -82,7 +82,7 @@ session_start();
     <tr>
     <?php
     $conn = mysqli_connect("localhost", "root", "", "canteen");
-    $sql = "SELECT * FROM order_details WHERE username= '" . $_SESSION["userid"] . "';";
+    $sql = "SELECT * FROM order_details WHERE username= '" . $_SESSION["userid"] . "'ORDER BY timestamp DESC;";
     $result = $conn->query($sql);
     while($row = $result->fetch_assoc()) 
     {

@@ -116,7 +116,7 @@ body
     }
     .inc-exp-container 
     {
-        background-color: #CC6600;
+        background-color: #333;
         padding: 20px;
         box-shadow: var(--box-shadow);
         display: flex;
@@ -168,7 +168,7 @@ body
 
     .btn {
     cursor: pointer;
-    background-color: #CC6600;
+    background-color: #333;
     box-shadow: var(--box-shadow);
     color: white;
     display: block;
