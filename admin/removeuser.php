@@ -1,29 +1,27 @@
 <?php
 $message="";
-if(count($_POST)>0) {
+if(count($_POST)>0) 
+{
 	$conn = mysqli_connect("localhost","root","","canteen");
-		if (mysqli_connect_errno())
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
+	if (mysqli_connect_errno())
+    {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    }
 	$a=$_POST['user_name'];
 	$sql="select * from user   where username='$a' ";
 	$result = mysqli_query($conn,$sql);
 	$row=mysqli_num_rows($result);
-
 	if ($row ==0)
     {
 		$message = "invalid item name\\nTry again.";
 		echo "<script type='text/javascript'>alert('$message');</script>";
 
 	}
-
 	$sql=" delete  from user  where  username='" . $_POST["user_name"] . "' ";
 	$result = mysqli_query($conn,$sql);
     $message = "User Removed!";
     echo "<script type='text/javascript'>alert('$message');</script>";
 }
-
 ?>
 
 
@@ -183,13 +181,6 @@ if(count($_POST)>0) {
         background-color: red;
     }
 </style>
-
-<script>
-    function myFunction() 
-    {
-      alert("Your balance: "+"xxx");
-    }
-</script>
 
 <body>
     <center><br><br><br><br><h2 style="color:brown;">Remove User</h2><br></center>

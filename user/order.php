@@ -81,14 +81,14 @@
     <center><br><br><br><br><h2 style="color:brown;"> PLACE ORDER </h2><br></center>
     <form action="confirmation.php" method='post'>
     <?php
-    $i=0;
-    while($row = mysqli_fetch_array($result)) 
-    {
+      $i=0;
+      while($row = mysqli_fetch_array($result)) 
+      {
     ?>
     <center><?=$row["item_name"];?>&ensp;&ensp;<input type="number" name="<?=$row["item_name"];?>" min="0" ></center>
     <?php
-    $i++;
-    }
+      $i++;
+      }
     ?>  
     <center><input type="submit" value="Submit">
     </form>

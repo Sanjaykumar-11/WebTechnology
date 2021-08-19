@@ -3,12 +3,11 @@ $message="";
 if(count($_POST)>0) 
 {
 	$conn = mysqli_connect("localhost","root","","canteen");
-		if (mysqli_connect_errno())
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
+	if (mysqli_connect_errno())
+    {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    }
 	$result = mysqli_query($conn," insert into food_items values ('"  . $_POST["Item_name"] . "','" . $_POST["Item_cost"] . "','1')");
-
     $message = "Item is added successfully";
 	echo "<script type='text/javascript'>alert('$message');</script>";
 }

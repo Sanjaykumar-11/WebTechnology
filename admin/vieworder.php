@@ -183,19 +183,19 @@ if(count($_POST)>0)
           </tr>
 
           <?php
-          $conn = mysqli_connect("localhost", "root", "", "canteen") or die("Connection Error: " . mysqli_error($conn));
-          $i=0;
-          $result = mysqli_query($conn, "SELECT * FROM order_details where Status='0' ORDER BY timestamp DESC ");
+            $conn = mysqli_connect("localhost", "root", "", "canteen") or die("Connection Error: " . mysqli_error($conn));
+            $i=0;
+            $result = mysqli_query($conn, "SELECT * FROM order_details where Status='0' ORDER BY timestamp DESC ");
 
-          while($row = mysqli_fetch_array($result)) 
-          {
+            while($row = mysqli_fetch_array($result)) 
+            {
           ?>
           <tr>
           <td><input type="checkbox" name="<?=$row["Order_id"];?>"  > </td><td><?=$row["username"];?></td> <td> <?=$row["item_name"];?></td> <td ><?=$row["item_qty"];?></td>
           </tr>
           <?php
-          $i++;
-          }
+            $i++;
+            }
           ?>
 
           </table>

@@ -111,20 +111,19 @@
 <th>Cost</th>
 </tr>
 <?php
-
-$sql = "SELECT * FROM food_items where include=1";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-while($row = $result->fetch_assoc()) {
-echo "<tr><td>" . $row["item_name"]. "</td><td>" . $row["price"] . "</td>";
-}
-echo "</table>";
-}
-$conn->close();
+    $sql = "SELECT * FROM food_items where include=1";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) 
+    {
+        while($row = $result->fetch_assoc()) 
+        {
+            echo "<tr><td>" . $row["item_name"]. "</td><td>" . $row["price"] . "</td>";
+        }
+        echo "</table>";
+    }
+    $conn->close();
 ?>
 </table>
       
 </body>
-
-
 </html>

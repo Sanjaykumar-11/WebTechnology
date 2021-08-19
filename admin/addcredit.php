@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html>
+
     <title>Add credit</title>
+
 <?php
 $message="";
-if(count($_POST)>0) {
+if(count($_POST)>0) 
+{
 	$conn = mysqli_connect("localhost","root","","canteen");
-		if (mysqli_connect_errno())
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
+	if (mysqli_connect_errno())
+    {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    }
 	$a=$_POST['user_name'];
 	$sql="select * from user where username='$a' ";
 	$result = mysqli_query($conn,$sql);
 	$row=mysqli_num_rows($result);
-
 	if ($row ==0)
     {
 		$message = "invalid user name\\nTry again.";
 		echo "<script type='text/javascript'>alert('$message');</script>";
 
 	}
-
-
-
 	$current = mysqli_query($conn," select credit_amount from user where username='" . $_POST["user_name"] . "'  ");
 	$temp = $_POST['credit_amount'];
 	$row = mysqli_fetch_row($current);
@@ -33,6 +32,7 @@ if(count($_POST)>0) {
     echo "<script type='text/javascript'>alert('$message');</script>";
 }
 ?>
+
 <head>
     <h1 style="color:brown; font-size:40px; text-align: center;">TCE FOOD COURT</h1> 
     <br><br>
@@ -73,7 +73,6 @@ if(count($_POST)>0) {
         overflow: hidden;
         background-color: brown;
     }
-
     .navbar a 
     {
         float: left;
@@ -83,13 +82,11 @@ if(count($_POST)>0) {
         padding: 16px 75px;
         text-decoration: none;
     }
-
     .dropdown 
     {
         float: left;
         overflow: hidden;
     }
-
     .dropdown .dropbtn 
     {
         font-size: 16px;  
@@ -101,12 +98,10 @@ if(count($_POST)>0) {
         font-family: inherit;
         margin: 0;
     }
-
     .navbar a:hover, .dropdown:hover .dropbtn 
     {
         background-color: red;
     }
-
     .dropdown-content 
     {
         display: none;
@@ -116,7 +111,6 @@ if(count($_POST)>0) {
         box-shadow: 0px 8px 50px 0px rgba(0,0,0,0.2);
         z-index: 1;
     }
-
     .dropdown-content a 
     {
         float: none;
@@ -126,12 +120,10 @@ if(count($_POST)>0) {
         display: block;
         text-align: left;
     }
-
     .dropdown-content a:hover 
     {
         background-color: #ddd;
     }
-
     .dropdown:hover .dropdown-content 
     {
         display: block;
@@ -166,7 +158,6 @@ if(count($_POST)>0) {
         border-radius: 4px;
         box-sizing: border-box;
     }
-
     input[type=submit] 
     {
         width: 10%;

@@ -94,16 +94,16 @@
 
 <body>
     <?php
-    session_start();
-    echo "<h1>";
-    echo " Insufficient Balance" ;
-    echo "</h1>";
-    echo "<br>";
-    echo "Current Balance: ";
-    echo $_SESSION["Bal"];
-    echo "<br>";
-    echo "Total Bill: ";
-    echo $_SESSION["Bill"];
+        session_start();
+        echo "<h1>";
+        echo " Insufficient Balance" ;
+        echo "</h1>";
+        echo "<br>";
+        echo "Current Balance: ";
+        echo $_SESSION["Bal"];
+        echo "<br>";
+        echo "Total Bill: ";
+        echo $_SESSION["Bill"];
     ?>
 </body>
 

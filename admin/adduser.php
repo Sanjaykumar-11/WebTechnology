@@ -1,16 +1,16 @@
 <?php
 $message="";
-if(count($_POST)>0) {
+if(count($_POST)>0) 
+{
 	$conn = mysqli_connect("localhost","root","","canteen");
-		if (mysqli_connect_errno())
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
-		$result = mysqli_query($conn," insert into user values ('" . $_POST["userName"] . "','" . $_POST["password"] . "','" . $_POST["privilage"] . "','" . $_POST["credit"] . "')");
-
-        $message = "User added successfully!";
-        echo "<script type='text/javascript'>alert('$message');</script>";
-	}
+	if (mysqli_connect_errno())
+    {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    }
+	$result = mysqli_query($conn," insert into user values ('" . $_POST["userName"] . "','" . $_POST["password"] . "','" . $_POST["privilage"] . "','" . $_POST["credit"] . "')");
+    $message = "User added successfully!";
+    echo "<script type='text/javascript'>alert('$message');</script>";
+}
    
 
 ?>

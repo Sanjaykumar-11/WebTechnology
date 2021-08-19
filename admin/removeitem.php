@@ -1,23 +1,21 @@
 <?php
 $message="";
-if(count($_POST)>0) {
+if(count($_POST)>0) 
+{
 	$conn = mysqli_connect("localhost","root","","canteen");
-		if (mysqli_connect_errno())
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
+    if (mysqli_connect_errno())
+    {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    }
 	$a=$_POST['Item_Id'];
 	$sql="select * from food_items  where item_name='$a' ";
 	$result = mysqli_query($conn,$sql);
 	$row=mysqli_num_rows($result);
-
 	if ($row ==0)
- {
+    {
 		$message = "invalid item name\\nTry again.";
 		echo "<script type='text/javascript'>alert('$message');</script>";
-
 	}
-
 	$sql="delete from food_items  where item_name='$a' ";
 	$result = mysqli_query($conn,$sql);
     $message = "Item removed";
@@ -181,13 +179,6 @@ if(count($_POST)>0) {
         background-color: red;
     }
 </style>
-
-<script>
-    function myFunction() 
-    {
-      alert("Your balance: "+"xxx");
-    }
-</script>
 
 <body>
     <center><br><br><br><br><h2 style="color:brown;">Add Items</h2><br></center>

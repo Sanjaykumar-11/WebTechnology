@@ -1,12 +1,15 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "canteen") or die("Connection Error: " . mysqli_error($conn));
-$result = mysqli_query($conn, "SELECT * FROM food_items ");
+    $conn = mysqli_connect("localhost", "root", "", "canteen") or die("Connection Error: " . mysqli_error($conn));
+    $result = mysqli_query($conn, "SELECT * FROM food_items ");
 ?>
 
 <!DOCTYPE html>
 <html>
   <title>Update Availablity</title>
+
 <link rel="stylesheet" href="../admincss.css"> 
+
+
 <style>
     body
     {
@@ -123,6 +126,7 @@ $result = mysqli_query($conn, "SELECT * FROM food_items ");
         <a href="../index.php">Logout</a>
     </div>
 </head>
+
 <style>
   input[type=submit] 
     {
@@ -141,52 +145,54 @@ $result = mysqli_query($conn, "SELECT * FROM food_items ");
     {
         background-color: red;
     }
-    input[type=checkbox] {
-    zoom: 1.5;
-}
+    input[type=checkbox] 
+    {
+        zoom: 1.5;
+    }
 </style>
+
 <body>
-  <br><br><br><br>
+<br><br><br><br>
+
 <form action="" method='post'>
-  <center>
-<fieldset style="border:solid 5px ; border-color:brown">
-
-  <legend>ITEMS AVAILABLE</legend>
-<?php
-$i=0;
-while($row = mysqli_fetch_array($result)) {
-?>
-
-<div style="margin-top:30px;"> <input type="checkbox" name="<?=$row["item_name"];?>"  >&emsp;&emsp; <?=$row["item_name"];?><br></div>
-<?php
-$i++;
-}
-?>
-<br>
-<br>
-<center><input type="submit" value="submit"></center>
-</fieldset>
-  </center>
-</div>
+<center>
+    <fieldset style="border:solid 5px ; border-color:brown">
+    <legend>ITEMS AVAILABLE</legend>
+        <?php
+            $i=0;
+            while($row = mysqli_fetch_array($result)) 
+            {
+        ?>
+        <div style="margin-top:30px;"> <input type="checkbox" name="<?=$row["item_name"];?>"  >&emsp;&emsp; <?=$row["item_name"];?><br></div>
+        <?php
+            $i++;
+        }
+        ?>
+        <br><br>
+        <center><input type="submit" value="submit"></center>
+    </fieldset>
+</center>
 </form>
 
 <?php
-if(count($_POST)>0) {
-session_start();
-$total =0;
-$_SESSION["Page_NO"]=1;
-$conn = mysqli_connect("localhost", "root", "", "canteen") or die("Connection Error: " . mysqli_error($conn));
-$result = mysqli_query($conn," update food_items set include=0 where 1");
-foreach($_POST as $x => $x_value) {
-$temp = str_replace("_"," ","$x");
-
-$age[$temp] = $x_value;
-if($x_value=="on"){
-$result = mysqli_query($conn," update food_items set include=1 where item_name='" . $temp . "'");
-}
-}
-$message = "Availablity updated!";
-echo "<script type='text/javascript'>alert('$message');</script>";
+if(count($_POST)>0) 
+{
+    session_start();
+    $total =0;
+    $_SESSION["Page_NO"]=1;
+    $conn = mysqli_connect("localhost", "root", "", "canteen") or die("Connection Error: " . mysqli_error($conn));
+    $result = mysqli_query($conn," update food_items set include=0 where 1");
+    foreach($_POST as $x => $x_value) 
+    {
+        $temp = str_replace("_"," ","$x");
+        $age[$temp] = $x_value;
+        if($x_value=="on")
+        {
+            $result = mysqli_query($conn," update food_items set include=1 where item_name='" . $temp . "'");
+        }
+    }
+    $message = "Availablity updated!";
+    echo "<script type='text/javascript'>alert('$message');</script>";
 }
 ?>
 </body>
