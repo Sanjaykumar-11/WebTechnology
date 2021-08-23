@@ -8,105 +8,110 @@
 <title>Login</title>
 
 <head>
-    <h1 style="color:brown; font-size:42px; text-align: center;">TCE FOOD COURT</h1> 
+   <img class="header" src="images/header.png" alt="TCE FOOD COURT" height="80"> 
 </head>     
 
 <style>
-    body 
-    {
-        background-color: lemonchiffon;
-    }
-    .main
-    {
-        width: 320px;
-        height: 420px;
-        background-repeat: no-repeat;
-        background-position: left top;
-        background-attachment: fixed;
-        background-size: cover;
-        color: brown;
-        top: 50%;
-        left: 50%;
-        position: absolute;
-        transform: translate(-50%,-50%);
-        box-sizing: border-box;
-        padding: 70px 30px;
-    }
-    .main input
-    {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-    .main label
-    {
-        margin: 0;
-        padding: 0;
-        font-weight: bold;
-    }
-    h1
-    {
-        margin: 0;
-        padding: 0 0 20px;
-        text-align: center;
-        font-size: 22px;
-    }
-    .main input[type="text"], input[type="password"]
-    {
-        border: none;
-        border-bottom: 2px solid brown;
-        background: white;
-        outline: 1px;
-        height: 50px;
-        color: black;
-        font-size: 15px;
-    }
-    .main input[type="submit"]
-    {
-        border: none;
-        outline: none;
-        height: 40px;
-        background: brown;
-        color: white;
-        font-size: 20px;
-        border-radius: 20px;
-    }
-    .main input[type="submit"]:hover
-    {
-        cursor: pointer;
-        background: red;
-        color:white;
-    }
-    .logo
-    {
-        width: 100px;
-        height: 100px;
-        border-radius: 80%;
-        position: absolute;
-        top: 70px;
-        left: calc(50% - 50px);
-    }
+  .header 
+  {
+    background-repeat:no-repeat;
+    background-size:cover;
+    width: 100%;
+  }
+  body 
+  {
+      background-color: lemonchiffon;
+  }
+  .main
+  {
+      width: 320px;
+      height: 420px;
+      background-repeat: no-repeat;
+      background-position: left top;
+      background-attachment: fixed;
+      background-size: cover;
+      color: brown;
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      transform: translate(-50%,-50%);
+      box-sizing: border-box;
+      padding: 70px 30px;
+  }
+  .main input
+  {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+  .main label
+  {
+      margin: 0;
+      padding: 0;
+      font-weight: bold;
+  }
+  h1
+  {
+      margin: 0;
+      padding: 0 0 20px;
+      text-align: center;
+      font-size: 22px;
+  }
+  .main input[type="text"], input[type="password"]
+  {
+      border: none;
+      border-bottom: 2px solid brown;
+      background: white;
+      outline: 1px;
+      height: 50px;
+      color: black;
+      font-size: 15px;
+  }
+  .main input[type="submit"]
+  {
+      border: none;
+      outline: none;
+      height: 40px;
+      background: brown;
+      color: white;
+      font-size: 20px;
+      border-radius: 20px;
+  }
+  .main input[type="submit"]:hover
+  {
+      cursor: pointer;
+      background: red;
+      color:white;
+  }
+  .logo
+  {
+      width: 100px;
+      height: 100px;
+      border-radius: 80%;
+      position: absolute;
+      top: 5px;
+      left: calc(50% - 50px);
+  }
 </style>
 
 <body>
-  <br><br><br>
-    <img src="icon.jpeg" class="logo">
-    <div class="main">
-        <form method="post">
-            <h1 style="color:brown;" > LOGIN </h1><br>
+  <div class="main">
+      <form method="post">       
+      <img src="icon.jpeg" class="logo">
+      <br><br><br><br>
+        <h1 style="color:brown;" > LOGIN </h1><br>
 
-            <label for="username">Username </label><br><br>
-            <input type="text" id="username" name="userName">
-            <br><br>
+        <label for="username">Username </label><br><br>
+        <input type="text" id="username" name="userName">
+        <br>
 
-            <label for="password">Password </label><br><br>
-            <input type="password" id="password" name="password">
-            <br><br>
+        <label for="password">Password </label><br><br>
+        <input type="password" id="password" name="password">
+        <br>
 
-            <input type="submit" value="Sign In" name="submit">
-        </form>
-    </div>
+        <input type="submit" value="Sign In" name="submit">
+      </form>
+  </div>
 </body>
-
 
 <?php
   $message="";

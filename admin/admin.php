@@ -3,7 +3,7 @@
   <title>Admin</title>
 <link rel="stylesheet" href="../admincss.css"> 
 <head>
-    <h1 style="color:brown; font-size:40px; text-align: center;">TCE FOOD COURT</h1> 
+  <img class="header" src="../images/header.png" alt="TCE FOOD COURT" height="80">  
     <br><br>
     <div class="navbar">
         <a href="updateavailablity.php">Update Availablity</a>

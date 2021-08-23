@@ -29,7 +29,7 @@ if(count($_POST)>0)
 <html>
 <title>Remove item</title>
 <head>
-    <h1 style="color:brown; font-size:40px; text-align: center;">TCE FOOD COURT</h1> 
+    <img class="header" src="../images/header.png" alt="TCE FOOD COURT" height="80">  
     <br><br>
     <div class="navbar">
         <a href="admin.php">Home</a>
@@ -60,7 +60,7 @@ if(count($_POST)>0)
 <style>
     body
     {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: sans-serif;
         background-color: lemonchiffon;
     }
     .navbar 
@@ -68,7 +68,12 @@ if(count($_POST)>0)
         overflow: hidden;
         background-color: brown;
     }
-
+    .header 
+    {
+        background-repeat:no-repeat;
+        background-size:cover;
+        width: 100%;
+    }
     .navbar a 
     {
         float: left;

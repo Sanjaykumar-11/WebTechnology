@@ -18,7 +18,7 @@ if(count($_POST)>0)
 <html>
 <title>Add user</title>
 <head>
-    <h1 style="color:brown; font-size:40px; text-align: center;">TCE FOOD COURT</h1> 
+    <img class="header" src="../images/header.png" alt="TCE FOOD COURT" height="80">  
     <br><br>
     <div class="navbar">
         <a href="admin.php">Home</a>
@@ -50,6 +50,12 @@ if(count($_POST)>0)
     {
         font-family: Arial, Helvetica, sans-serif;
         background-color: lemonchiffon;
+    }
+    .header 
+    {
+        background-repeat:no-repeat;
+        background-size:cover;
+        width: 100%;
     }
     .navbar 
     {

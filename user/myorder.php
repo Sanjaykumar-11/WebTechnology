@@ -5,7 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-    <h1 style="color:brown; font-size:40px; text-align: center;">TCE FOOD COURT</h1> 
+    <img class="header" src="../images/header.png" alt="TCE FOOD COURT" height="80">  
     <div class="btn-group">
         <a button class="button" href="user.php">Home</button></a>
         <a button class="button" href="order.php">Order Now</button></a>
@@ -17,6 +17,12 @@ session_start();
     {
         font-family:sans-serif;
         background-color: lemonchiffon;
+    }
+    .header 
+    {
+        background-repeat:no-repeat;
+        background-size:cover;
+        width: 100%;
     }
 
     .btn-group .button 

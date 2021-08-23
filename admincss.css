@@ -35,7 +35,12 @@ body
         font-family: inherit;
         margin: 0;
     }
-
+    .header 
+    {
+      background-repeat:no-repeat;
+      background-size:cover;
+      width: 100%;
+    }
     .navbar a:hover, .dropdown:hover .dropbtn 
     {
         background-color: red;

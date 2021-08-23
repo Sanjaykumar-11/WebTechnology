@@ -83,5 +83,4 @@ function init()
   updateValues();
 }
 init();
-
 form.addEventListener("submit", addTransaction);
