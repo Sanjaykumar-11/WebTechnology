@@ -13,14 +13,19 @@
 <style>
     body
     {
+        background-attachment: fixed;
         font-family: sans-serif;
-        background-color: lemonchiffon;
+        background-image: url("../images/bg.jpg");
+        background-repeat:no-repeat;
+        background-size:cover;
+        height: 750px;
     }
     .header 
     {
         background-repeat:no-repeat;
         background-size:cover;
-        width: 100%;
+        height: 50px;
+        width: 500px;
     }
     .navbar 
     {
@@ -64,7 +69,7 @@
     {
         display: none;
         position: absolute;
-        background-color: lemonchiffon;;
+        background-color: #E7E5E6;
         min-width: 160px;
         box-shadow: 0px 8px 50px 0px rgba(0,0,0,0.2);
         z-index: 1;
@@ -106,7 +111,9 @@
 
 </style>
 <head>
-    <img class="header" src="../images/header.png" alt="TCE FOOD COURT" height="80">  
+    <center>
+    <img class="header" src="../images/header.png" alt="TCE FOOD COURT">  
+    </center>
     <br><br>
     <div class="navbar">
         <a href="admin.php">Home</a>
@@ -169,7 +176,7 @@
             while($row = mysqli_fetch_array($result)) 
             {
         ?>
-        <div style="margin-top:30px;"> <input type="checkbox" name="<?=$row["item_name"];?>"  >&emsp;&emsp; <?=$row["item_name"];?><br></div>
+        <div style="text-align:left;  margin-left: 160px; padding:10px 10px; font-size:large"> <input type="checkbox" name="<?=$row["item_name"];?>"  >&emsp;&emsp; <?=$row["item_name"];?><br></div>
         <?php
             $i++;
         }

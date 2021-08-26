@@ -15,12 +15,17 @@
     body 
     {
         font-family: sans-serif;
-        background-color: lemonchiffon;
+        background-image: url("../images/bg.jpg");
+        background-repeat:no-repeat;
+        background-size:cover;
+        height: 750px;
+        background-attachment: fixed;
     }
 
     .header 
     {
         background-repeat:no-repeat;
+        background-attachment: fixed;
         background-size:cover;
         width: 100%;
     }
@@ -30,7 +35,7 @@
         background-color: brown;
         border: 1px solid brown;
         color: white;
-        padding: 20px 196.5px;
+        padding: 20px 190px;
         text-align: center;
         text-decoration: none;
         display: inline-block;

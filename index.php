@@ -8,7 +8,9 @@
 <title>Login</title>
 
 <head>
+   <center>
    <img class="header" src="images/header.png" alt="TCE FOOD COURT" height="80"> 
+   </center>
 </head>     
 
 <style>
@@ -16,11 +18,15 @@
   {
     background-repeat:no-repeat;
     background-size:cover;
-    width: 100%;
+    height: 60px;
+    width: 600px;
   }
   body 
   {
-      background-color: lemonchiffon;
+    background-image: url("images/bg.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    height: 750px;
   }
   .main
   {

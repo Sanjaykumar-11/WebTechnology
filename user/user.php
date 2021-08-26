@@ -6,8 +6,10 @@
 <html>
 <title>User</title>
 <head>
+    <center>
     <img class="header" src="../images/header.png" alt="TCE FOOD COURT" height="80">  
-
+    </center>
+    <br><br><br>
     <div class="btn-group" center>
 
         <a button class="button" href="order.php">Order Now</button></a>
@@ -40,15 +42,20 @@
 <style>
     body 
     {
+        background-attachment: fixed;
         font-family: sans-serif;
-        background-color: lemonchiffon;
+        background-image: url("../images/bg.jpg");
+        background-repeat:no-repeat;
+        background-size:cover;
+        height: 750px;
     }
 
     .header 
     {
         background-repeat:no-repeat;
         background-size:cover;
-        width: 100%;
+        height: 50px;
+        width: 500px;
     }
 
     .btn-group .button 
@@ -86,7 +93,7 @@
 
     #menu td, #menu th 
     {
-        background-color: lemonchiffon;
+        background-color: rgb(231, 229, 230);
         border: 1px solid brown;
         padding: 8px;
         font-size: 20px;

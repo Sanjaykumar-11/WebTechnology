@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <center>
     <img class="header" src="../images/header.png" alt="TCE FOOD COURT" height="80">  
+    </center>
+    <br>
+    <br>
     <div class="btn-group">
         <a button class="button" href="user.php">Home</button></a>
         <a button class="button" href="myorder.php">My Orders</button></a>
@@ -14,12 +18,17 @@
     {
         background-repeat:no-repeat;
         background-size:cover;
-        width: 100%;
+        height: 50px;
+        width: 500px;
     }
     body 
     {
         font-family: sans-serif;
-        background-color: lemonchiffon;
+        background-image: url("../images/bg.jpg");
+        background-repeat:no-repeat;
+        background-size:cover;
+        height: 750px;
+        background-attachment: fixed;
     }
 
     .btn-group .button 

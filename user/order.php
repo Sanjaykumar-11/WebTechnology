@@ -6,7 +6,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <center>
     <img class="header" src="../images/header.png" alt="TCE FOOD COURT" height="80">  
+  </center>
+  <br>
+  <br>
     <div class="btn-group">
         <a button class="button" href="user.php">Home</button></a>
         <a button class="button" href="myorder.php">My Orders</button></a>
@@ -18,13 +22,19 @@
     body 
     {
         font-family: sans-serif;
-        background-color: lemonchiffon;
+        font-family: sans-serif;
+        background-image: url("../images/bg.jpg");
+        background-repeat:no-repeat;
+        background-size:cover;
+        height: 750px;
+        background-attachment: fixed;
     }
     .header 
     {
-      background-repeat:no-repeat;
-      background-size:cover;
-      width: 100%;
+        background-repeat:no-repeat;
+        background-size:cover;
+        height: 50px;
+        width: 500px;
     }
 
     .btn-group .button 
@@ -32,7 +42,7 @@
         background-color: brown;
         border: 1px solid brown;
         color: white;
-        padding: 20px 196px;
+        padding: 20px 194px;
         text-align: center;
         text-decoration: none;
         display: inline-block;

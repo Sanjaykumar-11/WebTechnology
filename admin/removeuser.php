@@ -32,7 +32,9 @@ if(count($_POST)>0)
 <html>
 <title>Remove user</title>
 <head>
-    <img class="header" src="../images/header.png" alt="TCE FOOD COURT" height="80">  
+    <center>
+    <img class="header" src="../images/header.png" alt="TCE FOOD COURT">
+    </center>  
     <br><br>
     <div class="navbar">
         <a href="admin.php">Home</a>
@@ -62,8 +64,12 @@ if(count($_POST)>0)
 <style>
     body
     {
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: lemonchiffon;
+        background-attachment: fixed;
+        font-family: sans-serif;
+        background-image: url("../images/bg.jpg");
+        background-repeat:no-repeat;
+        background-size:cover;
+        height: 750px;
     }
     .navbar 
     {
@@ -74,7 +80,8 @@ if(count($_POST)>0)
     {
         background-repeat:no-repeat;
         background-size:cover;
-        width: 100%;
+        height: 50px;
+        width: 500px;
     }
     .navbar a 
     {
@@ -82,7 +89,7 @@ if(count($_POST)>0)
         font-size: 16px;
         color: white;
         text-align: center;
-        padding: 16px 58px;
+        padding: 16px 56.5px;
         text-decoration: none;
     }
 
@@ -113,7 +120,7 @@ if(count($_POST)>0)
     {
         display: none;
         position: absolute;
-        background-color: lemonchiffon;;
+        background-color: #E7E5E6;
         min-width: 160px;
         box-shadow: 0px 8px 50px 0px rgba(0,0,0,0.2);
         z-index: 1;

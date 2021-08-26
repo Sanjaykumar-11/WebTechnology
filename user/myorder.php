@@ -5,7 +5,11 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
+    <center>
     <img class="header" src="../images/header.png" alt="TCE FOOD COURT" height="80">  
+    </center>
+    <br>
+    <br>
     <div class="btn-group">
         <a button class="button" href="user.php">Home</button></a>
         <a button class="button" href="order.php">Order Now</button></a>
@@ -16,13 +20,18 @@ session_start();
     body 
     {
         font-family:sans-serif;
-        background-color: lemonchiffon;
+        background-image: url("../images/bg.jpg");
+        background-repeat:no-repeat;
+        background-size:cover;
+        height: 750px;
+        background-attachment: fixed;
     }
     .header 
     {
         background-repeat:no-repeat;
         background-size:cover;
-        width: 100%;
+        height: 50px;
+        width: 500px;
     }
 
     .btn-group .button 
@@ -59,7 +68,7 @@ session_start();
 
     #menu td, #menu th 
     {
-        background-color: lemonchiffon;
+        background-color: #E7E5E6;
         border: 1px solid brown;
         padding: 8px;
         font-size: 20px;
