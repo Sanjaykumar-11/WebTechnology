@@ -116,6 +116,15 @@
         display: block;
     }
 
+    :root 
+    {
+    --text: #fff0f0;
+    --line: #ebd4d4;
+    --last: #835858;
+    --box-shadow: 0 1px 5px rgba(250, 250, 250, 0.2),
+        0 1px 5px rgba(255, 255, 255, 0.3);
+    }
+
     .container 
     {
         margin: 30px auto;

@@ -7,9 +7,15 @@ if(count($_POST)>0)
     {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
     }
-	$result = mysqli_query($conn," insert into user values ('" . $_POST["userName"] . "','" . $_POST["password"] . "','" . $_POST["privilage"] . "','" . $_POST["credit"] . "')");
-    $message = "User added successfully!";
-    echo "<script type='text/javascript'>alert('$message');</script>";
+    else
+    {
+        $result = mysqli_query($conn," insert into user values ('" . $_POST["userName"] . "','" . $_POST["password"] . "','" . $_POST["privilage"] . "','" . $_POST["credit"] . "')");
+        $message = "User added successfully!";
+        if($result)
+        {
+            echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+    }
 }
    
 
@@ -194,11 +200,11 @@ if(count($_POST)>0)
       <input type="password" name="password" required>
       <br>
       <label for="usertype">User Type&ensp;&ensp;&ensp;</label>
-      <input type="number" name="privilage" placeholder="1 for admin 0 for normal" required pattern="[0 | 1]{1}"><br>
+      <input type="number" name="privilage" placeholder="1 for admin 0 for normal" min="0" max="1"><br>
       <label for="usertype">Credit amount&ensp;</label>
-      <input type="number" name="credit" min="0" max="1000"><br><br>
-          <input type="submit" value="ADD" >
-        </form>
+      <input type="number" name="credit" min="100" required><br><br>
+          <input type="submit" value="ADD">
+      </form>
     </center>
 </body>
 </html>

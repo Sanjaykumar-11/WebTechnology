@@ -22,14 +22,20 @@ if(count($_POST)>0)
 		echo "<script type='text/javascript'>alert('$message');</script>";
 
 	}
-	$current = mysqli_query($conn," select credit_amount from user where username='" . $_POST["user_name"] . "'  ");
-	$temp = $_POST['credit_amount'];
-	$row = mysqli_fetch_row($current);
-	$base_pay = $row[0];
-	$base_pay = $base_pay + $temp;
-	$result = mysqli_query($conn," update user set credit_amount = $base_pay where username='" . $_POST["user_name"] . "' ");
-    $message = "Amount succesfully credited!";
-    echo "<script type='text/javascript'>alert('$message');</script>";
+    else
+    {
+        $current = mysqli_query($conn," select credit_amount from user where username='" . $_POST["user_name"] . "'  ");
+        $temp = $_POST['credit_amount'];
+        $row = mysqli_fetch_row($current);
+        $base_pay = $row[0];
+        $base_pay = $base_pay + $temp;
+        $result = mysqli_query($conn," update user set credit_amount = $base_pay where username='" . $_POST["user_name"] . "' ");
+        if($result)
+        {
+            $message = "Amount succesfully credited!";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+    }
 }
 ?>
 
@@ -198,10 +204,10 @@ if(count($_POST)>0)
         <form action="" method="post">
 
           <label for="username">Username &ensp;&ensp;</label>
-          <input type="text" name="user_name" placeholder="username">
+          <input type="text" name="user_name" placeholder="username" required>
         <br>
           <label for="credit">credit &nbsp;&ensp;&ensp;&nbsp;&ensp; &nbsp;&ensp;</label>
-          <input type="number" name="credit_amount" placeholder="credit amount">
+          <input type="number" name="credit_amount" placeholder="credit amount" min="100" required>
       <br>
 
           <input type="submit" value="Submit">

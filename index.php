@@ -107,11 +107,11 @@
         <h1 style="color:brown;" > LOGIN </h1><br>
 
         <label for="username">Username </label><br><br>
-        <input type="text" id="username" name="userName">
+        <input type="text" id="username" name="userName" required>
         <br>
 
         <label for="password">Password </label><br><br>
-        <input type="password" id="password" name="password">
+        <input type="password" id="password" name="password" required>
         <br>
 
         <input type="submit" value="Sign In" name="submit">
