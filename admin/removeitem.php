@@ -191,7 +191,7 @@ if(count($_POST)>0)
 </style>
 
 <body>
-    <center><br><br><br><br><h2 style="color:brown;">Add Items</h2><br></center>
+    <center><br><br><br><br><h2 style="color:brown;">Remove Items</h2><br></center>
 
     <center>
         <form action="" method="post">

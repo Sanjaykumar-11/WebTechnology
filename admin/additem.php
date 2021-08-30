@@ -191,7 +191,7 @@ if(count($_POST)>0)
           <label for="Item name">Item name&ensp;</label>
           <input type="text" name="Item_name" placeholder="Item name"><br>
       <label for="price">Price  &ensp;&ensp;&ensp;&ensp;&ensp;</label>
-      <input type="number" name="Item_cost" placeholder="cost">
+      <input type="number" name="Item_cost" placeholder="cost" min="0">
       <br>
           <input type="submit" value="ADD">
         </form>
